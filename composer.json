@@ -1,0 +1,34 @@
+{
+	"name": "ajitbohra/twitter-api-feed",
+	"type": "wordpress-plugin",
+	"license": "GPL-3.0",
+	"description": "Easily add twitter feed to page/post using shortcode or widget",
+	"homepage": "https://ajitbohra.com/",
+	"require": {
+	},
+	"require-dev": {
+		"squizlabs/php_codesniffer": "*",
+		"wp-coding-standards/wpcs": "^0.14",
+		"wimg/php-compatibility": "^8.0",
+		"dealerdirect/phpcodesniffer-composer-installer": "^0.4.3"
+	  },
+	"keywords": [
+	  "wordpress",
+	  "plugin",
+	  "twitter"
+	],
+	"scripts": {
+		"phpcs": [
+			"phpcs -s -p"
+		  ],
+		  "phpcbf": [
+			"phpcbf -p"
+		  ]
+	},
+	"extra": {
+		"scripts-description": {
+		  "phpcs": "Analyze code against the WordPress coding standards with PHP_CodeSniffer",
+		  "phpcbf": "Fix coding standards warnings/errors automatically with PHP Code Beautifier"
+		}
+	  }
+  }
