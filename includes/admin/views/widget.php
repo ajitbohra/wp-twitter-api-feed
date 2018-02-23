@@ -10,6 +10,25 @@
 			value="<?php esc_attr_e( $title ); ?>">
 </p>
 
+<!-- Show title -->
+<p>
+	<label for="<?php esc_attr_e( $this->get_field_id( 'show_title' ) ); ?>">
+		<?php esc_attr_e( 'Show title', TAF_PLUGIN_TEXTDOMAIN ); ?>
+	</label>
+	<span class="taf_float_right">
+		<input	name="<?php esc_attr_e( $this->get_field_name( 'show_title' ) ); ?>"
+				type="radio"
+				<?php checked( $show_title, 0 ); ?>
+				value="0"> No
+	</span>
+	<span class="taf_float_right">
+		<input	name="<?php esc_attr_e( $this->get_field_name( 'show_title' ) ); ?>"
+				type="radio"
+				<?php checked( $show_title, 1 ); ?>
+				value="1"> Yes &nbsp;
+	</span>
+</p>
+
 <!-- Tweet count -->
 <p>
 	<label for="<?php esc_attr_e( $this->get_field_id( 'tweet_count' ) ); ?>">
