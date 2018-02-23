@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-/** 
+/**
  * Setup Constants
 */
 
@@ -66,24 +66,31 @@ function taf_load_plugin_textdomain() {
   * Include files
   */
 
-  require_once TAF_PLUGIN_DIR . 'includes/admin/settings.php';
-  require_once TAF_PLUGIN_DIR . 'includes/shortcode.php';
+require_once TAF_PLUGIN_DIR . 'includes/admin/settings.php';
+require_once TAF_PLUGIN_DIR . 'includes/shortcode.php';
+
+// Get settings
+$options = get_option( 'taf_settings' );
+$taf_widget = $options[ 'widget' ];
+
+if( $taf_widget ) {
   require_once TAF_PLUGIN_DIR . 'includes/widget.php';
+}
 
 /**
- * Add plugin setting link to plugin row meta 
+ * Add plugin setting link to plugin row meta
  */
 
 add_filter( 'plugin_row_meta', 'taf_plugin_row_meta', 10, 2 );
- 
-function taf_plugin_row_meta( $links, $file ) {    
+
+function taf_plugin_row_meta( $links, $file ) {
     if ( TAF_PLUGIN_BASENAME == $file ) {
 
 		$taf_settings_link = sprintf( '<a href="%s" aria-label="%s">%s</a>', admin_url( 'options-general.php?page=twitter_api_feed' ),esc_attr__( 'Plugin settings', TAF_PLUGIN_TEXTDOMAIN ), esc_html__( 'Settings', TAF_PLUGIN_TEXTDOMAIN ) );
         $row_meta = array(
           'settings'    =>	$taf_settings_link
         );
- 
+
         return array_merge( $links, $row_meta );
     }
     return (array) $links;
