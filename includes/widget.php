@@ -38,6 +38,9 @@ class taf_widget extends WP_Widget {
 	}
 
 	public function update( $new_instance, $old_instance ) {
+		// Clear transient
+		taf_clear_transient();
+
 		// Update widget attributes
 		$instance = $old_instance;
 

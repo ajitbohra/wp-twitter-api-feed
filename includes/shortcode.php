@@ -27,7 +27,12 @@ function taf_shortcode( $atts = [], $content = null, $tag = '' ) {
 	extract( $taf_atts );
 
 	// Fetch tweets
-	$taf_tweets = fetch_tweets( $tweet_count );
+	if ( get_transient( 'taf_tweet_cache' ) ) {
+		$taf_tweets = get_transient( 'taf_tweet_cache' );
+	} else {
+		$taf_tweets = fetch_tweets( $tweet_count );
+		set_transient( 'taf_tweet_cache', $taf_tweets, 2 * HOUR_IN_SECONDS );
+	}
 
 	// Render output
 	ob_start();
@@ -58,8 +63,12 @@ function fetch_tweets( $tweet_count ) {
 		'consumer_secret'           => $consumer_secret,
 		'access_token'              => $access_token,
 		'access_token_secret'       => $access_token_secret,
-		'twitter_screen_name'       => $username,
-		'tweets_to_retrieve'		=> 25,
+		'api_params'				=> array(
+												'screen_name' => $username,
+												'exclude_replies' => true,
+												'include_rts' => false
+											),
+		'tweets_to_retrieve'		=> 100,
 		'tweets_to_display'			=> $tweet_count,
 		'enable_cache'          	=> false,
 		'twitter_template'      => '<ul id="twitter">{tweets}</ul>',
@@ -68,6 +77,16 @@ function fetch_tweets( $tweet_count ) {
 	  $tweet_list = $TweetPHP->get_tweet_list();
 
 	  return $tweet_list;
+}
+
+/**
+ * Update transient on settings update
+ */
+
+add_action( 'update_option_taf_settings', 'taf_clear_transient', 10, 2 );
+
+function taf_clear_transient() {
+	delete_transient( 'taf_tweet_cache' );
 }
 
 ?>
