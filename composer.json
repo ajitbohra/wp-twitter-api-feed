@@ -8,8 +8,8 @@
 	},
 	"require-dev": {
 		"squizlabs/php_codesniffer": "*",
-		"wp-coding-standards/wpcs": "^0.14",
 		"wimg/php-compatibility": "^8.0",
+		"wp-coding-standards/wpcs": "^0.14",
 		"dealerdirect/phpcodesniffer-composer-installer": "^0.4.3"
 	  },
 	"keywords": [
@@ -23,12 +23,12 @@
 		  ],
 		  "phpcbf": [
 			"phpcbf -p"
-		  ]
+			]
 	},
 	"extra": {
 		"scripts-description": {
 		  "phpcs": "Analyze code against the WordPress coding standards with PHP_CodeSniffer",
 		  "phpcbf": "Fix coding standards warnings/errors automatically with PHP Code Beautifier"
 		}
-	  }
-  }
+	}
+}
