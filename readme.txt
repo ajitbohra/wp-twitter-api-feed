@@ -15,7 +15,7 @@ Display twitter feed on website
 Easily display customized twitter feed on your website using widget or shortcode
 
 == Installation ==
-- Upload file or search for \'Toptal Twitter Feed API\'
+- Upload file or search for \'Twitter API Feed\' on WordPress repository
 - Set the twitter credentials under setting
 - Use shortcode to display feed in post/page
 - Use widget to display  in sidebar
