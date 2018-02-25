@@ -7,7 +7,7 @@ class taf_widget extends WP_Widget {
 	public function __construct() {
 		parent::__construct(
 			'taf-widget',
-			__( 'Twitter API Feed' )
+			__( 'Twitter API Feed', 'TAF' )
 		);
 
 		// Register widget
@@ -25,13 +25,13 @@ class taf_widget extends WP_Widget {
 		$taf_username = $options[ 'username' ];
 
 		// Widget attributes
-		$title = !empty( $instance['title' ] ) ? $instance[ 'title' ] : esc_html__( 'Twitter Feed' , TAF_PLUGIN_TEXTDOMAIN );
+		$title = !empty( $instance['title' ] ) ? $instance[ 'title' ] : esc_html__( 'Twitter Feed' , 'TAF' );
 		$show_title = isset( $instance['show_title' ] ) ? $instance[ 'show_title' ] : '1';
 		$tweet_count = !empty( $instance['tweet_count' ] ) ? $instance[ 'tweet_count' ] : 5;
 		$bg_color = !empty( $instance['bg_color' ] ) ? $instance[ 'bg_color' ] : '#ffffff';
 		$text_color = !empty( $instance['text_color' ] ) ? $instance[ 'text_color' ] : '#000000';
 		$show_link = isset( $instance['show_link' ] ) ? $instance[ 'show_link' ] : '1';
-		$link_text = !empty( $instance['link_text' ] ) ? $instance[ 'link_text' ] : sprintf( __( 'Follow us @%s', TAF_PLUGIN_TEXTDOMAIN ), $taf_username );
+		$link_text = !empty( $instance['link_text' ] ) ? $instance[ 'link_text' ] : sprintf( __( 'Follow us @%s', 'TAF' ), $taf_username );
 
 		// Render form
 		require TAF_PLUGIN_DIR . 'includes/admin/views/widget.php';

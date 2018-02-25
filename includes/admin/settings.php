@@ -27,7 +27,7 @@ function taf_settings_init(  ) {
 	// Register section
 	add_settings_section(
 		'taf_settings_section',
-		__( 'Settings', TAF_PLUGIN_TEXTDOMAIN ),
+		__( 'Settings', 'TAF' ),
 		'taf_settings_section_callback',
 		'tafSettings'
 	);
@@ -36,7 +36,7 @@ function taf_settings_init(  ) {
 	// Field: Enable/disable widget
 	add_settings_field(
 		'widget',
-		__( 'Enable Widget', TAF_PLUGIN_TEXTDOMAIN ),
+		__( 'Enable Widget', 'TAF' ),
 		'widget_render',
 		'tafSettings',
 		'taf_settings_section'
@@ -45,7 +45,7 @@ function taf_settings_init(  ) {
 	// Field: Twitter username
 	add_settings_field(
 		'username',
-		__( 'Username', TAF_PLUGIN_TEXTDOMAIN ),
+		__( 'Username', 'TAF' ),
 		'username_render',
 		'tafSettings',
 		'taf_settings_section'
@@ -54,7 +54,7 @@ function taf_settings_init(  ) {
 	// Field: Twitter consumer key
 	add_settings_field(
 		'consumer_key',
-		__( 'Consumer key', TAF_PLUGIN_TEXTDOMAIN ),
+		__( 'Consumer key', 'TAF' ),
 		'consumer_key_render',
 		'tafSettings',
 		'taf_settings_section'
@@ -63,7 +63,7 @@ function taf_settings_init(  ) {
 	// Field: Twitter consumer secret
 	add_settings_field(
 		'consumer_secret',
-		__( 'Consumer secret', TAF_PLUGIN_TEXTDOMAIN ),
+		__( 'Consumer secret', 'TAF' ),
 		'consumer_secret_render',
 		'tafSettings',
 		'taf_settings_section'
@@ -72,7 +72,7 @@ function taf_settings_init(  ) {
 	// Field: Twitter access token
 	add_settings_field(
 		'access_token',
-		__( 'Access token', TAF_PLUGIN_TEXTDOMAIN ),
+		__( 'Access token', 'TAF' ),
 		'access_token_render',
 		'tafSettings',
 		'taf_settings_section'
@@ -81,7 +81,7 @@ function taf_settings_init(  ) {
 	// Field: Twitter access token secret
 	add_settings_field(
 		'access_token_secret',
-		__( 'Access token secret', TAF_PLUGIN_TEXTDOMAIN ),
+		__( 'Access token secret', 'TAF' ),
 		'access_token_secret_render',
 		'tafSettings',
 		'taf_settings_section'
@@ -155,7 +155,7 @@ function access_token_secret_render(  ) {
 // Render: setting section
 function taf_settings_section_callback(  ) {
 
-	echo __( 'Twitter API access configuration', TAF_PLUGIN_TEXTDOMAIN );
+	echo __( 'Twitter API access configuration', 'TAF' );
 
 }
 

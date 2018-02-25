@@ -1,0 +1,21 @@
+{
+  "name": "twitter-api-feed",
+  "version": "1.0.0",
+  "description": "Display twitter feed using shortcode or widget",
+  "main": "gulpfile.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git@git.toptal.com:Ajit-Bohra/ajit-bohra.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-checktextdomain": "^2.1.1",
+    "gulp-notify": "^3.2.0",
+    "gulp-sort": "^2.0.0",
+    "gulp-wp-pot": "^2.2.0"
+  }
+}

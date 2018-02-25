@@ -20,7 +20,7 @@ function taf_shortcode( $atts = [], $content = null, $tag = '' ) {
                                     'bg_color' => '#ffffff',
                                     'text_color' => '#000000',
                                     'show_link' => true,
-                                    'link_text' => sprintf( __( 'Follow us @%s', TAF_PLUGIN_TEXTDOMAIN ), $taf_username ),
+                                    'link_text' => sprintf( __( 'Follow us @%s', 'TAF' ), $taf_username ),
 								], $atts, $tag );
 
 	//extract attributes from array

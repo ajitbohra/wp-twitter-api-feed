@@ -24,11 +24,6 @@ if ( ! defined( 'TAF_VERSION' ) ) {
 	define( 'TAF_VERSION', '1.0.0' );
 }
 
-// Plugin text domain
-if ( ! defined( 'TAF_PLUGIN_TEXTDOMAIN' ) ) {
-	define( 'TAF_PLUGIN_TEXTDOMAIN', 'TAF' );
-}
-
 // Plugin Root File
 if ( ! defined( 'TAF_PLUGIN_FILE' ) ) {
 	define( 'TAF_PLUGIN_FILE', __FILE__ );
@@ -86,7 +81,7 @@ add_filter( 'plugin_row_meta', 'taf_plugin_row_meta', 10, 2 );
 function taf_plugin_row_meta( $links, $file ) {
     if ( TAF_PLUGIN_BASENAME == $file ) {
 
-		$taf_settings_link = sprintf( '<a href="%s" aria-label="%s">%s</a>', admin_url( 'options-general.php?page=twitter_api_feed' ),esc_attr__( 'Plugin settings', TAF_PLUGIN_TEXTDOMAIN ), esc_html__( 'Settings', TAF_PLUGIN_TEXTDOMAIN ) );
+		$taf_settings_link = sprintf( '<a href="%s" aria-label="%s">%s</a>', admin_url( 'options-general.php?page=twitter_api_feed' ),esc_attr__( 'Plugin settings', 'TAF' ), esc_html__( 'Settings', 'TAF' ) );
         $row_meta = array(
           'settings'    =>	$taf_settings_link
         );
