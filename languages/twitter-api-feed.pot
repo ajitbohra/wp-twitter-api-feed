@@ -15,86 +15,87 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: twitter-api-feed.php:84
+#: twitter-api-feed.php:90
 msgid "Plugin settings"
 msgstr ""
 
-#: twitter-api-feed.php:84, includes/admin/settings.php:30
+#: twitter-api-feed.php:90, includes/admin/settings.php:34
 msgid "Settings"
 msgstr ""
 
-#: includes/shortcode.php:23, includes/widget.php:34
-msgid "Follow us @%s"
-msgstr ""
-
-#: includes/widget.php:10
+#: includes/class-taf-widget.php:18
 msgid "Twitter API Feed"
 msgstr ""
 
-#: includes/widget.php:28
+#: includes/class-taf-widget.php:45
 msgid "Twitter Feed"
 msgstr ""
 
-#: includes/admin/settings.php:39
+#. translators: placeholder will be repalced by twitter username.
+#: includes/class-taf-widget.php:52, includes/shortcode.php:36
+msgid "Follow us @%s"
+msgstr ""
+
+#: includes/admin/settings.php:43
 msgid "Enable Widget"
 msgstr ""
 
-#: includes/admin/settings.php:48
+#: includes/admin/settings.php:52
 msgid "Username"
 msgstr ""
 
-#: includes/admin/settings.php:57
+#: includes/admin/settings.php:61
 msgid "Consumer key"
 msgstr ""
 
-#: includes/admin/settings.php:66
+#: includes/admin/settings.php:70
 msgid "Consumer secret"
 msgstr ""
 
-#: includes/admin/settings.php:75
+#: includes/admin/settings.php:79
 msgid "Access token"
 msgstr ""
 
-#: includes/admin/settings.php:84
+#: includes/admin/settings.php:88
 msgid "Access token secret"
 msgstr ""
 
-#: includes/admin/settings.php:158
+#: includes/admin/settings.php:177
 msgid "Twitter API access configuration"
 msgstr ""
 
-#: includes/admin/views/widget.php:4
+#: includes/admin/views/widget.php:13
 msgid "Title"
 msgstr ""
 
-#: includes/admin/views/widget.php:16
+#: includes/admin/views/widget.php:25
 msgid "Show title"
 msgstr ""
 
-#: includes/admin/views/widget.php:22, includes/admin/views/widget.php:79
+#: includes/admin/views/widget.php:31, includes/admin/views/widget.php:88
 msgid "No"
 msgstr ""
 
-#: includes/admin/views/widget.php:28, includes/admin/views/widget.php:85
+#: includes/admin/views/widget.php:37, includes/admin/views/widget.php:94
 msgid "Yes"
 msgstr ""
 
-#: includes/admin/views/widget.php:35
+#: includes/admin/views/widget.php:44
 msgid "Tweet Count"
 msgstr ""
 
-#: includes/admin/views/widget.php:49
+#: includes/admin/views/widget.php:58
 msgid "Background color"
 msgstr ""
 
-#: includes/admin/views/widget.php:61
+#: includes/admin/views/widget.php:70
 msgid "Text color"
 msgstr ""
 
-#: includes/admin/views/widget.php:73
+#: includes/admin/views/widget.php:82
 msgid "Show profile link"
 msgstr ""
 
-#: includes/admin/views/widget.php:92
+#: includes/admin/views/widget.php:101
 msgid "Link text"
 msgstr ""

@@ -6,11 +6,12 @@
 
 /* Modules (Can be installed with npm install command using package.json)
  ------------------------------------- */
- gulp = require('gulp'),
- notify = require('gulp-notify'),
- sort = require('gulp-sort'),
- checktextdomain = require('gulp-checktextdomain'),
- wpPot = require('gulp-wp-pot'),
+ var gulp = require('gulp'),
+ 	 notify = require('gulp-notify'),
+ 	 sort = require('gulp-sort'),
+ 	 checktextdomain = require('gulp-checktextdomain'),
+	  wpPot = require('gulp-wp-pot'),
+	  zip = require('gulp-zip');
 
  /* Text-domain task
  ------------------------------------- */
@@ -44,7 +45,7 @@ gulp.task('textdomain', function () {
                 '!vendor/**',                 // Exclude vendor/
                 '!assets/**',                 // Exclude assets/
                 '!.github/**',                // Exclude .github/
-                '!.wordpress-org/**',         // Exclude .github/
+				'!.wordpress-org/**',         // Exclude .wordpress-org/
             ]
         )
         .pipe(checktextdomain(options))
@@ -69,9 +70,30 @@ gulp.task('textdomain', function () {
         .pipe(gulp.dest('languages/twitter-api-feed.pot'));
 });
 
+/* zip file task
+ ------------------------------------- */
+ gulp.task('zip', function () {
+	return gulp.src([
+		// Include
+		'**/*.php',
+		'**/*.html',
+		'**/*.css',
+		'**/*.js',
+		'**/*.txt',
+		'**/*.pot',
+
+		// Exclude
+		'!vendor/**/*',
+		'!node_modules/**/*',
+		'!gulpfile.js'
+	])
+	  .pipe(zip('twitter-api-feed.zip'))
+	  .pipe(gulp.dest('./build'));
+  });
+
 /* Default Gulp task
  ------------------------------------- */
  gulp.task('default', function () {
 	// Run all the tasks!
-	gulp.start('textdomain','pot');
+	gulp.start('textdomain','pot', 'zip');
 });
